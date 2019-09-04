@@ -1,6 +1,7 @@
 
 import sys
 import pyperclip
+import random
 
 if len(sys.argv) == 1: 
     print("No message inputed")
@@ -10,7 +11,8 @@ message = sys.argv[1]
 sarcasmed = ""
 cnt = 0
 for letter in message: 
-    sarcasmed += letter.upper() if cnt%2 else letter.lower()
+    sarcasmed += letter.upper() if random.randint(1,3) == 1 else letter.lower()
+    #  sarcasmed += letter.upper() if cnt%2 else letter.lower()
     cnt += 1
 pyperclip.copy(sarcasmed)
 
